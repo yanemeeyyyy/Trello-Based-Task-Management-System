@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management System</title>
+</head>
+<body>
+
+<h2>Arianne's Task Management System</h2>
+<div class="topbar">
+  <div>
+    <label>Task</label>
+    <input id="text" placeholder="Enter your task..."/>
+  </div>
+
+  <div>
+    <label>Priority Level</label>
+    <select id="priority">
+	  <option value="">Select Level</option>
+      <option value="low">Low</option>
+      <option value="moderate">Moderate</option>
+      <option value="urgent">Urgent</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Due Date</label>
+    <input type="date" id="date" />
+  </div>
+
+  <div>
+    <label>Due Time</label>
+    <input type="time" id="time" />
+  </div>
+
+  <button onclick="createTask()">Add Task</button>
+</div>
+
+<div class="dashboard">
+  <div class="panel" id="todaySection"><h3>Due Today:</h3><div id="todayList"></div></div>
+  <div class="panel" id="tomorrowSection"><h3>Due Tomorrow:</h3><div id="tomorrowList"></div></div>
+  <div class="panel" id="prioritySection"><h3>Priority:</h3><div id="priorityList"></div></div>
+  <div class="panel" id="overdueSection"><h3>Overdue:</h3><div id="overdueList"></div></div>
+</div>
+
+<div class="board-wrapper">
+	<div class="board">
+	  <div class="col" ondrop="drop(event,'todo')" ondragover="allow(event)">
+		<h3>To-Do</h3>
+		<div id="todo"></div>
+	  </div>
+
+	  <div class="col" ondrop="drop(event,'inprogress')" ondragover="allow(event)">
+		<h3>In Progress</h3>
+		<div id="inprogress"></div>
+	  </div>
+
+	  <div class="col" ondrop="drop(event,'done')" ondragover="allow(event)">
+		<h3>Done</h3>
+		<div id="done"></div>
+	  </div>
+	</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

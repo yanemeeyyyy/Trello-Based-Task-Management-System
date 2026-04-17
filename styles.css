@@ -1,0 +1,156 @@
+body { 
+	font-family: Arial; 
+	margin: 0; 
+	background:#0f4c6b; 
+	color:#0f4c6b; 
+}
+
+h2 {
+	text-align: center;
+	color: #c9d6db;
+}
+
+.topbar {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    gap: 15px;
+    align-items: end;
+    background: #c9d6db;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.topbar label {
+	font-weight: bold;	
+}
+
+.topbar input, .topbar select {
+    width: 100%;
+	box-sizing: border-box
+}
+
+.topbar div {
+	display: flex;
+	flex-direction: column;
+}
+
+.topbar button {
+	width:150px;
+}
+
+input, select {
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    flex:1;
+}
+
+button {
+    padding:10px 14px;
+    border:none;
+    border-radius:8px;
+    background:#1c6e8c;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover {
+    background-color:#d6eaf8;
+	color: #1c6e8c;
+	border: 1px solid #1c6e8c;
+}
+
+.dashboard {
+	display:grid;
+	grid-template-columns:1fr 1fr;
+	gap:20px;
+	padding:0 15px;
+}
+
+.panel {
+	background:#c9d6db;
+	border-radius:12px;
+	padding:15px;
+	min-height:100px;
+}
+
+.panel h3 { 
+	margin-top:0; 
+}
+
+.panel div {
+    margin-bottom:5px;
+}
+
+.board {
+    display:flex;
+    gap:25px;
+    padding:15px;
+}
+
+.board-wrapper {
+	background:#c9d6db;
+	margin:15px;
+	padding:15px;
+	border-radius:12px;
+	margin-top: 20px;
+}
+
+.col {
+	width:700px;
+	background:#1c6e8c;
+	padding:10px;
+	border-radius:12px;
+	min-height:400px;
+	color:white;
+}
+
+.col h3 {
+    text-align:center;
+    background:#c9d6db;
+    color:#0f4c6b;
+    padding:10px;
+    border-radius:10px;
+	width: 200px;
+	margin: 0 auto;
+}
+
+.card {
+	padding:12px;
+	margin:10px 0;
+	border-radius:12px;
+	cursor:grab;
+	color:#123;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.todo { 
+	background:#d6eaf8; 
+}
+
+.inprogress { 
+	background:#fff3cd; 
+}
+
+.done { 
+	background:#d4edda; 
+}
+
+.overdue {
+    background:#f8d7da;
+    border:1px solid red;
+}
+
+.actions {
+    margin-top:6px;
+}
+
+.actions button {
+	margin-right:5px;
+	background:#1c6e8c;
+	color:white;
+	padding:4px 10px;
+	border-radius:10px;
+	font-size:12px;
+}
