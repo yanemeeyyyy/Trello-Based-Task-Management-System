@@ -184,6 +184,7 @@ button:hover {
 
 .modal-actions {
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
+  width: 50px;
   margin-top: 15px;
 }
