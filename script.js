@@ -1,3 +1,4 @@
+let draggedTaskId = null;
 let tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
 
 function save() {
@@ -47,6 +48,10 @@ function loadTasks() {
     `;
 
     el.ondragstart = e => e.dataTransfer.setData('id', task.id);
+
+	el.addEventListener('touchstart', (e) => {
+  		draggedTaskId = task.id;
+	});
 
     document.getElementById(task.status).appendChild(el);
 
