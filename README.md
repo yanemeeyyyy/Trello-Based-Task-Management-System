@@ -10,39 +10,30 @@ Additionally, the application includes dynamic dashboard sections that automatic
 These sections update in real time. When a task is marked as Done or deleted, it is automatically removed from these lists. If no tasks meet a category’s condition, the corresponding section is hidden from the interface.
 
 ## Features
-
 * Create tasks with:
   - Task name
   - Due date and time
   - Priority level (Low, Moderate, Urgent)
-
 * Kanban-style board:
   - To-Do
   - In Progress
   - Done
-
-* Drag-and-drop functionality for task movement
-
+* Drag-and-drop functionality for task movement (mobile and desktop)
 * Edit tasks (update task name)
-
 * Delete tasks with confirmation prompt
-
 * Dynamic dashboard sections:
   - Due Today
   - Due Tomorrow
   - Urgent Tasks
   - Overdue Tasks
-
 * Conditional rendering:
   - Sections appear only when relevant
   - Automatically update when tasks are completed or deleted
-
 * Persistent storage using **localStorage**
 
 ---
 
 ## Tech Stack
-
 - **HTML5** – Structure
 - **CSS3** – Styling and layout (Grid & Flexbox)
 - **JavaScript (Vanilla)** – Application logic, DOM manipulation, and event handling
@@ -51,7 +42,6 @@ These sections update in real time. When a task is marked as Done or deleted, it
 ---
 
 ## How It Works
-
 - Tasks are stored as objects in an array
 - The UI is dynamically updated using **DOM manipulation**
 - Drag-and-drop events update task status in real time
@@ -73,15 +63,14 @@ https://yanemeeyyyy.github.io/Trello-Based-Task-Management-System/
 1. **Create a Task**  
    Enter the task name, due date, due time, and select a priority level.
    <img width="1918" height="866" alt="image" src="https://github.com/user-attachments/assets/3267142d-88e8-4781-b3cb-f0150da0d82e" />
+   <img width="1918" height="868" alt="image" src="https://github.com/user-attachments/assets/81c1e4e4-6fb9-4ddf-8825-bb0f08816dd3" />
+   <img width="1918" height="862" alt="image" src="https://github.com/user-attachments/assets/41bc6012-41ee-4dca-bace-e35469315fdb" />
+   <img width="1918" height="868" alt="image" src="https://github.com/user-attachments/assets/65d78ba3-a5bc-4448-b4df-4a6e1cc9ca3b" />
    <img width="1918" height="867" alt="image" src="https://github.com/user-attachments/assets/f40939df-3404-41d3-afbc-61cd1272c7a1" />
 
 2. **Add the Task**  
    Click the **“Add Task”** button. The task will appear in the **To-Do** column.
    <img width="1918" height="866" alt="image" src="https://github.com/user-attachments/assets/eb2bb7d9-6421-4d3f-9813-4a7550949073" />
-   <img width="1918" height="868" alt="image" src="https://github.com/user-attachments/assets/81c1e4e4-6fb9-4ddf-8825-bb0f08816dd3" />
-   <img width="1918" height="862" alt="image" src="https://github.com/user-attachments/assets/41bc6012-41ee-4dca-bace-e35469315fdb" />
-   <img width="1918" height="868" alt="image" src="https://github.com/user-attachments/assets/65d78ba3-a5bc-4448-b4df-4a6e1cc9ca3b" />
-
    <img width="1918" height="866" alt="image" src="https://github.com/user-attachments/assets/87690579-383e-4875-95be-03e3e9d20932" />
 
 3. **Manage Tasks**  
