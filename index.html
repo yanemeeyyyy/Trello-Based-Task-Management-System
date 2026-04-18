@@ -46,17 +46,17 @@
 
 <div class="board-wrapper">
 	<div class="board">
-	  <div class="col" ondrop="drop(event,'todo')" ondragover="allow(event)">
+	  <div class="col" ondrop="drop(event,'todo')" ondragover="allow(event)" ontouchend="handleDrop('todo')">
 		<h3>To-Do</h3>
 		<div id="todo"></div>
 	  </div>
 
-	  <div class="col" ondrop="drop(event,'inprogress')" ondragover="allow(event)">
+	  <div class="col" ondrop="drop(event,'inprogress')" ondragover="allow(event)" ontouchend="handleDrop('inprogress')">
 		<h3>In Progress</h3>
 		<div id="inprogress"></div>
 	  </div>
 
-	  <div class="col" ondrop="drop(event,'done')" ondragover="allow(event)">
+	  <div class="col" ondrop="drop(event,'done')" ondragover="allow(event)" ontouchend="handleDrop('done')">
 		<h3>Done</h3>
 		<div id="done"></div>
 	  </div>
