@@ -19,7 +19,7 @@ These sections update in real time. When a task is marked as Done or deleted, it
   - In Progress
   - Done
 * Drag-and-drop functionality for task movement (mobile and desktop)
-* Edit tasks (update task name)
+* Edit task modal (Update Task Name, Priority Level, Due Date and Time)
 * Delete tasks with confirmation prompt
 * Dynamic dashboard sections:
   - Due Today
