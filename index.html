@@ -62,6 +62,32 @@
 	  </div>
 	</div>
 </div>
+<div id="editModal" class="modal">
+  <div class="modal-content">
+    <h2>Edit Task</h2>
+
+    <label>Task</label>
+    <input id="editText" />
+
+    <label>Priority Level</label>
+    <select id="editPriority">
+      <option value="low">Low</option>
+      <option value="moderate">Moderate</option>
+      <option value="urgent">Urgent</option>
+    </select>
+
+    <label>Due Date</label>
+    <input type="date" id="editDate" />
+
+    <label>Due Time</label>
+    <input type="time" id="editTime" />
+
+    <div class="modal-actions">
+      <button onclick="saveEdit()">Edit Task</button>
+      <button onclick="closeModal()">Back</button>
+    </div>
+  </div>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
