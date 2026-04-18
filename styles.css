@@ -170,7 +170,7 @@ button:hover {
 .modal-content {
   background: #c9d6db;
   padding: 25px;
-  border: 1px solid #0f4c6b;
+  border: 10px solid #0f4c6b;
   border-radius: 12px;
   width: 400px;
   display: flex;
