@@ -1,4 +1,5 @@
 let draggedTaskId = null;
+let editingId = null;
 let tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
 
 function save() {
@@ -100,9 +101,33 @@ function createTask() {
 }
 
 function editTask(id) {
-  const task = tasks.find(t => t.id===id);
-  const newText = prompt('Edit task:', task.text);
-  if(newText){ task.text=newText; save(); loadTasks(); }
+  const task = tasks.find(t => t.id === id);
+
+  editingId = id;
+
+  document.getElementById('editText').value = task.text;
+  document.getElementById('editPriority').value = task.priority;
+  document.getElementById('editDate').value = task.date;
+  document.getElementById('editTime').value = task.time;
+
+  document.getElementById('editModal').style.display = 'flex';
+}
+
+function saveEdit() {
+  const task = tasks.find(t => t.id === editingId);
+
+  task.text = document.getElementById('editText').value;
+  task.priority = document.getElementById('editPriority').value;
+  task.date = document.getElementById('editDate').value;
+  task.time = document.getElementById('editTime').value;
+
+  save();
+  loadTasks();
+  closeModal();
+}
+
+function closeModal() {
+  document.getElementById('editModal').style.display = 'none';
 }
 
 function deleteTask(id) {
