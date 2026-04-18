@@ -112,12 +112,26 @@ function deleteTask(id) {
   }
 }
 
-function allow(e){ e.preventDefault(); }
+function allow(e){ 
+	e.preventDefault(); 
+}
 
 function drop(e,status){
   e.preventDefault();
   const id = e.dataTransfer.getData('id');
   tasks = tasks.map(t=> t.id===id ? {...t,status} : t);
+  save();
+  loadTasks();
+}
+
+function handleDrop(status) {
+  if (!draggedTaskId) return;
+
+  tasks = tasks.map(t =>
+    t.id === draggedTaskId ? { ...t, status } : t
+  );
+
+  draggedTaskId = null;
   save();
   loadTasks();
 }
