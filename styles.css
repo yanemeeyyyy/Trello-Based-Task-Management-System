@@ -187,3 +187,19 @@ button:hover {
   justify-content: center;
   margin-top: 15px;
 }
+
+.alert-box {
+  border-left: 6px solid #ff4d4f;
+  animation: pop 0.25s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
