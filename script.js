@@ -11,6 +11,13 @@ function showAlert(message) {
   document.getElementById('alertModal').style.display = 'flex';
 }
 
+window.onclick = function(e) {
+  const modal = document.getElementById('alertModal');
+  if (e.target === modal) {
+    closeAlert();
+  }
+};
+
 function closeAlert() {
   document.getElementById('alertModal').style.display = 'none';
 }
@@ -99,6 +106,12 @@ function createTask() {
 
 if (!text || !date || !time || !priority) {
   showAlert("Please fill all fields");
+
+  document.getElementById('text').style.border = !text ? '2px solid red' : '';
+  document.getElementById('date').style.border = !date ? '2px solid red' : '';
+  document.getElementById('time').style.border = !time ? '2px solid red' : '';
+  document.getElementById('priority').style.border = !priority ? '2px solid red' : '';
+
   return;
 }
 
