@@ -6,6 +6,15 @@ function save() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+function showAlert(message) {
+  document.getElementById('alertMessage').textContent = message;
+  document.getElementById('alertModal').style.display = 'flex';
+}
+
+function closeAlert() {
+  document.getElementById('alertModal').style.display = 'none';
+}
+
 function loadTasks() {
   const todayList = document.getElementById('todayList');
   const tomorrowList = document.getElementById('tomorrowList');
@@ -88,7 +97,10 @@ function createTask() {
   const time = document.getElementById('time').value;
   const priority = document.getElementById('priority').value;
 
-  if (!text) return;
+if (!text || !date || !time || !priority) {
+  showAlert("Please fill all fields");
+  return;
+}
 
   tasks.push({ id: Date.now().toString(), text, status:'todo', date, time, priority });
 
