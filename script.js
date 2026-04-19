@@ -6,22 +6,6 @@ function save() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-function showAlert(message) {
-  document.getElementById('alertMessage').textContent = message;
-  document.getElementById('alertModal').style.display = 'flex';
-}
-
-window.onclick = function(e) {
-  const modal = document.getElementById('alertModal');
-  if (e.target === modal) {
-    closeAlert();
-  }
-};
-
-function closeAlert() {
-  document.getElementById('alertModal').style.display = 'none';
-}
-
 function loadTasks() {
   const todayList = document.getElementById('todayList');
   const tomorrowList = document.getElementById('tomorrowList');
@@ -103,17 +87,6 @@ function createTask() {
   const date = document.getElementById('date').value;
   const time = document.getElementById('time').value;
   const priority = document.getElementById('priority').value;
-
-if (!text || !date || !time || !priority) {
-  showAlert("Please fill all fields");
-
-  document.getElementById('text').style.border = !text ? '2px solid red' : '';
-  document.getElementById('date').style.border = !date ? '2px solid red' : '';
-  document.getElementById('time').style.border = !time ? '2px solid red' : '';
-  document.getElementById('priority').style.border = !priority ? '2px solid red' : '';
-
-  return;
-}
 
   tasks.push({ id: Date.now().toString(), text, status:'todo', date, time, priority });
 
