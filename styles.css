@@ -10,7 +10,7 @@ h2 {
 	color: #c9d6db;
 }
 
-.topbar {
+form .topbar {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr auto;
     gap: 15px;
