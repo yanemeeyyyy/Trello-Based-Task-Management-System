@@ -193,3 +193,66 @@ button:hover {
   margin-top: 15px;
   gap: 20px;
 }
+
+@media (max-width: 400px) {
+
+  /* 🔹 Topbar becomes vertical */
+  .topbar {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar button {
+    width: 100%;
+    align-self: stretch;
+  }
+
+  /* 🔹 Dashboard becomes single column */
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  /* 🔹 Board becomes vertical */
+  .board {
+    flex-direction: column;
+  }
+
+  /* 🔹 Columns take full width */
+  .col {
+    width: 100%;
+  }
+
+  /* 🔹 Reduce padding for smaller screen */
+  .board-wrapper {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .panel {
+    padding: 10px;
+  }
+
+  /* 🔹 Modal fits screen */
+  .modal-content {
+    width: 90%;
+  }
+
+  /* 🔹 Smaller text */
+  h2 {
+    font-size: 20px;
+  }
+
+  .card {
+    font-size: 14px;
+  }
+
+  /* 🔹 Buttons inside cards stack */
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}
