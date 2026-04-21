@@ -81,6 +81,8 @@ function loadTasks() {
   document.getElementById('tomorrowSection').style.display = hasTomorrow ? 'block' : 'none';
   document.getElementById('prioritySection').style.display = hasPriority ? 'block' : 'none';
   document.getElementById('overdueSection').style.display = hasOverdue ? 'block' : 'none';
+
+  cleanUpDoneTasks();
 }
 
 function createTask() {
@@ -156,10 +158,21 @@ function allow(e){
 	e.preventDefault(); 
 }
 
-function drop(e,status){
+function drop(e, status){
   e.preventDefault();
   const id = e.dataTransfer.getData('id');
-  tasks = tasks.map(t=> t.id===id ? {...t,status} : t);
+
+  tasks = tasks.map(t => {
+    if (t.id === id) {
+      return {
+        ...t,
+        status,
+        completedAt: status === 'done' ? new Date().toISOString() : null
+      };
+    }
+    return t;
+  });
+
   save();
   loadTasks();
 }
@@ -167,13 +180,35 @@ function drop(e,status){
 function handleDrop(status) {
   if (!draggedTaskId) return;
 
-  tasks = tasks.map(t =>
-    t.id === draggedTaskId ? { ...t, status } : t
-  );
+  tasks = tasks.map(t => {
+    if (t.id === draggedTaskId) {
+      return {
+        ...t,
+        status,
+        completedAt: status === 'done' ? new Date().toISOString() : null
+      };
+    }
+    return t;
+  });
 
   draggedTaskId = null;
   save();
   loadTasks();
+}
+
+function cleanUpDoneTasks() {
+  const today = new Date().toISOString().split('T')[0];
+
+  tasks = tasks.filter(task => {
+    if (task.status !== 'done' || !task.completedAt) return true;
+
+    const completedDate = new Date(task.completedAt).toISOString().split('T')[0];
+
+    // ❌ remove if completed before today
+    return completedDate === today;
+  });
+
+  save();
 }
 
 loadTasks();
