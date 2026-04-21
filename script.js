@@ -39,15 +39,24 @@ function loadTasks() {
     el.className = `card ${task.status} ${isOverdue ? 'overdue' : ''}`;
     el.draggable = true;
 
-    el.innerHTML = `
-      <div>${task.text}</div>
-      <small>Due: ${task.date || ''} ${task.time || ''}</small>
-      <div>Priority: ${task.priority || ''}</div>
-      <div class="actions">
-        <button onmousedown="event.stopPropagation()" onclick="editTask('${task.id}')">Edit</button>
-        <button onmousedown="event.stopPropagation()" onclick="deleteTask('${task.id}')">Delete</button>
-      </div>
-    `;
+	el.innerHTML = `
+	  <div>${task.text}</div>
+	  <small>Due: ${task.date || ''} ${task.time || ''}</small>
+	  <div>Priority: ${task.priority || ''}</div>
+	
+	  <div class="mobile-status">
+	    <select onchange="updateStatus('${task.id}', this.value)">
+	      <option value="todo" ${task.status === 'todo' ? 'selected' : ''}>Not Started</option>
+	      <option value="inprogress" ${task.status === 'inprogress' ? 'selected' : ''}>Started</option>
+	      <option value="done" ${task.status === 'done' ? 'selected' : ''}>Finished</option>
+	    </select>
+	  </div>
+	
+	  <div class="actions">
+	    <button onmousedown="event.stopPropagation()" onclick="editTask('${task.id}')">Edit</button>
+	    <button onmousedown="event.stopPropagation()" onclick="deleteTask('${task.id}')">Delete</button>
+	  </div>
+	`;
 
     el.ondragstart = e => e.dataTransfer.setData('id', task.id);
 
@@ -125,6 +134,22 @@ function saveEdit() {
   save();
   loadTasks();
   closeModal();
+}
+
+function updateStatus(id, status) {
+  tasks = tasks.map(t => {
+    if (t.id === id) {
+      return {
+        ...t,
+        status,
+        completedAt: status === 'done' ? new Date().toISOString() : null
+      };
+    }
+    return t;
+  });
+
+  save();
+  loadTasks();
 }
 
 function closeModal() {
