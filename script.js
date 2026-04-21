@@ -1,5 +1,6 @@
 let draggedTaskId = null;
 let editingId = null;
+let deletingId = null;
 let tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
 
 function save() {
@@ -129,10 +130,26 @@ function closeModal() {
 }
 
 function deleteTask(id) {
-  if(confirm('Delete?')){
-    tasks = tasks.filter(t=>t.id!==id);
-    save(); loadTasks();
-  }
+  deletingId = id;
+
+  const task = tasks.find(t => t.id === id);
+  document.getElementById('deleteMessage').textContent =
+    `Delete "${task.text}"?`;
+
+  document.getElementById('deleteModal').style.display = 'flex';
+}
+
+function confirmDelete() {
+  tasks = tasks.filter(t => t.id !== deletingId);
+
+  deletingId = null;
+  save();
+  loadTasks();
+  closeDeleteModal();
+}
+
+function closeDeleteModal() {
+  document.getElementById('deleteModal').style.display = 'none';
 }
 
 function allow(e){ 
