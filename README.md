@@ -30,12 +30,12 @@ These sections update in real time. When a task is marked as Done or deleted, it
   - Sections appear only when relevant
   - Automatically update when tasks are completed or deleted
 * Persistent storage using **localStorage**
-
+* Mobile users can use this app
 ---
 
 ## Tech Stack
 - **HTML5** – Structure
-- **CSS3** – Styling and layout (Grid & Flexbox)
+- **CSS3** – Styling and layout (Grid & Flexbox), Mobile view
 - **JavaScript (Vanilla)** – Application logic, DOM manipulation, and event handling
 - **Browser localStorage API** – Data persistence
 
@@ -61,7 +61,7 @@ https://yanemeeyyyy.github.io/Trello-Based-Task-Management-System/
 ### How to Use
 
 1. **Create a Task**  
-   Enter the task name, due date, due time, and select a priority level.
+   Enter the task name, due date, due time, and select a priority level, and all inputs are required.
    <img width="1918" height="866" alt="image" src="https://github.com/user-attachments/assets/3267142d-88e8-4781-b3cb-f0150da0d82e" />
    <img width="1918" height="868" alt="image" src="https://github.com/user-attachments/assets/81c1e4e4-6fb9-4ddf-8825-bb0f08816dd3" />
    <img width="1918" height="862" alt="image" src="https://github.com/user-attachments/assets/41bc6012-41ee-4dca-bace-e35469315fdb" />
