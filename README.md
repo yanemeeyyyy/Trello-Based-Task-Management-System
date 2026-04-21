@@ -20,7 +20,7 @@ These sections update in real time. When a task is marked as Done or deleted, it
   - Done
 * Drag-and-drop functionality for task movement (mobile and desktop)
 * Edit task modal (Update Task Name, Priority Level, Due Date and Time)
-* Delete tasks with confirmation prompt
+* Delete task modal
 * Dynamic dashboard sections:
   - Due Today
   - Due Tomorrow
@@ -31,6 +31,7 @@ These sections update in real time. When a task is marked as Done or deleted, it
   - Automatically update when tasks are completed or deleted
 * Persistent storage using **localStorage**
 * Mobile users can use this app
+* Auto-clear completed tasks after midnight for better task management
 ---
 
 ## Tech Stack
