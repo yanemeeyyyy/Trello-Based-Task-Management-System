@@ -225,10 +225,13 @@ button:hover {
 
   /* 🔹 Reduce padding for smaller screen */
   .board-wrapper {
-    margin: 5px;
-    padding: 5px;
+    margin: 10px;
+    padding: 10px;
   }
 
+  .board-wrapper .board {
+    padding: 5px;
+  }
   .panel {
     padding: 10px;
   }
