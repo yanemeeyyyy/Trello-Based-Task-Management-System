@@ -216,7 +216,7 @@ button:hover {
   /* 🔹 Board becomes vertical */
   .board {
     flex-direction: column;
-	width: 350px;
+	width: 325px;
   }
 
   /* 🔹 Columns take full width */
@@ -230,9 +230,6 @@ button:hover {
     padding: 10px;
   }
 
-  .board-wrapper .board {
-    padding: 5px;
-  }
   .panel {
     padding: 10px;
   }
