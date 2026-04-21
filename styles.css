@@ -195,6 +195,16 @@ button:hover {
   gap: 20px;
 }
 
+.mobile-status {
+  display: none;
+  margin-top: 8px;
+}
+
+.mobile-status select {
+  width: 100%;
+  padding: 6px;
+  border-radius: 6px;
+}
 
 @media (max-width: 400px) {
 
@@ -259,5 +269,9 @@ button:hover {
 
   .actions button {
     width: 100%;
+  }
+
+  .mobile-status {
+    display: block;
   }
 }
