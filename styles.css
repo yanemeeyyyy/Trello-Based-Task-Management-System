@@ -221,6 +221,7 @@ button:hover {
   /* 🔹 Columns take full width */
   .col {
     width: 100%;
+	margin: 12px;
   }
 
   /* 🔹 Reduce padding for smaller screen */
