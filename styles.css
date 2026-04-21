@@ -216,6 +216,7 @@ button:hover {
   /* 🔹 Board becomes vertical */
   .board {
     flex-direction: column;
+	width: 320px;
   }
 
   /* 🔹 Columns take full width */
@@ -225,8 +226,8 @@ button:hover {
 
   /* 🔹 Reduce padding for smaller screen */
   .board-wrapper {
-    margin: 10px;
-    padding: 10px;
+    margin: 15px;
+    padding: 15px;
   }
 
   .panel {
