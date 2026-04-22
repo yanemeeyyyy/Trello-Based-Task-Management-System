@@ -264,7 +264,7 @@ button:hover {
   .card-controls {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
     margin-top: 8px;
     gap: 10px;
   }
@@ -275,7 +275,7 @@ button:hover {
   }
 
   .actions button {
-    width: 75px;
+    width: 65px;
   }
 
   .mobile-status {
