@@ -44,18 +44,20 @@ function loadTasks() {
 	  <small>Due: ${task.date || ''} ${task.time || ''}</small>
 	  <div>Priority: ${task.priority || ''}</div>
 	
-	  <div class="mobile-status">
-	    <select onchange="updateStatus('${task.id}', this.value)">
-	      <option value="todo" ${task.status === 'todo' ? 'selected' : ''}>Not Started</option>
-	      <option value="inprogress" ${task.status === 'inprogress' ? 'selected' : ''}>Started</option>
-	      <option value="done" ${task.status === 'done' ? 'selected' : ''}>Finished</option>
-	    </select>
-	  </div>
-	
-	  <div class="actions">
-	    <button onmousedown="event.stopPropagation()" onclick="editTask('${task.id}')">Edit</button>
-	    <button onmousedown="event.stopPropagation()" onclick="deleteTask('${task.id}')">Delete</button>
-	  </div>
+		<div class="card-controls">
+		  <div class="mobile-status">
+		    <select onchange="updateStatus('${task.id}', this.value)">
+		      <option value="todo" ${task.status === 'todo' ? 'selected' : ''}>Not Started</option>
+		      <option value="inprogress" ${task.status === 'inprogress' ? 'selected' : ''}>Started</option>
+		      <option value="done" ${task.status === 'done' ? 'selected' : ''}>Finished</option>
+		    </select>
+		  </div>
+		
+		  <div class="actions">
+		    <button onmousedown="event.stopPropagation()" onclick="editTask('${task.id}')">Edit</button>
+		    <button onmousedown="event.stopPropagation()" onclick="deleteTask('${task.id}')">Delete</button>
+		  </div>
+		</div>
 	`;
 
     el.ondragstart = e => e.dataTransfer.setData('id', task.id);
