@@ -263,12 +263,12 @@ button:hover {
   /* 🔹 Buttons inside cards stack */
   .actions {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 5px;
   }
 
   .actions button {
-    width: 100%;
+    width: 75px;
   }
 
   .mobile-status {
