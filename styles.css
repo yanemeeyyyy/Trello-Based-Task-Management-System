@@ -273,5 +273,6 @@ button:hover {
 
   .mobile-status {
     display: block;
+	width: 100px;
   }
 }
